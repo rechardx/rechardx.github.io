@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品集 | 我的博客</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              bg: '#0f1117',
+              surface: '#1a1b26',
+              border: '#2f3146',
+              text: '#c0caf5',
+              muted: '#565f89',
+              accent: '#7aa2f7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-dark-bg text-dark-text min-h-screen">
+  <!-- Nav -->
+  <nav class="border-b border-dark-border bg-dark-surface/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-semibold text-dark-text hover:text-dark-accent transition-colors">🏠 我的博客</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/" class="text-dark-muted hover:text-dark-text transition-colors">首页</a>
+        <a href="/portfolio.html" class="text-dark-accent">作品集</a>
+        <a href="/about.html" class="text-dark-muted hover:text-dark-text transition-colors">关于我</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-2">作品集</h1>
+    <p class="text-dark-muted mb-10">我做过的项目</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project Card 1 -->
+      <div class="rounded-lg border border-dark-border bg-dark-surface overflow-hidden hover:border-dark-accent transition-colors group">
+        <div class="aspect-video bg-dark-border flex items-center justify-center text-4xl">
+          🖼️
+        </div>
+        <div class="p-5">
+          <h3 class="font-semibold text-dark-text group-hover:text-dark-accent transition-colors">项目名称</h3>
+          <p class="text-sm text-dark-muted mt-2 leading-relaxed">这里写项目的简要描述，介绍项目的核心功能和技术栈。</p>
+          <div class="flex gap-2 mt-3">
+            <span class="text-xs px-2 py-0.5 rounded bg-dark-accent/10 text-dark-accent">HTML</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-dark-accent/10 text-dark-accent">CSS</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-dark-accent/10 text-dark-accent">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="rounded-lg border border-dark-border bg-dark-surface overflow-hidden hover:border-dark-accent transition-colors group">
+        <div class="aspect-video bg-dark-border flex items-center justify-center text-4xl">
+          🖼️
+        </div>
+        <div class="p-5">
+          <h3 class="font-semibold text-dark-text group-hover:text-dark-accent transition-colors">项目名称</h3>
+          <p class="text-sm text-dark-muted mt-2 leading-relaxed">这里写项目的简要描述，介绍项目的核心功能和技术栈。</p>
+          <div class="flex gap-2 mt-3">
+            <span class="text-xs px-2 py-0.5 rounded bg-dark-accent/10 text-dark-accent">Python</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-dark-accent/10 text-dark-accent">Flask</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="rounded-lg border border-dark-border bg-dark-surface overflow-hidden hover:border-dark-accent transition-colors group">
+        <div class="aspect-video bg-dark-border flex items-center justify-center text-4xl">
+          🖼️
+        </div>
+        <div class="p-5">
+          <h3 class="font-semibold text-dark-text group-hover:text-dark-accent transition-colors">项目名称</h3>
+          <p class="text-sm text-dark-muted mt-2 leading-relaxed">这里写项目的简要描述，介绍项目的核心功能和技术栈。</p>
+          <div class="flex gap-2 mt-3">
+            <span class="text-xs px-2 py-0.5 rounded bg-dark-accent/10 text-dark-accent">React</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-dark-accent/10 text-dark-accent">TypeScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-dark-border py-6 text-center text-dark-muted text-xs">
+    Powered by GitHub Pages
+  </footer>
+</body>
+</html>

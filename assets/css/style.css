@@ -1,0 +1,85 @@
+/* Custom styles for the blog */
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1b26; }
+::-webkit-scrollbar-thumb { background: #2f3146; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #565f89; }
+
+/* Base body styles */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sidebar link styles */
+.sidebar-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #565f89;
+  transition: all 0.15s ease;
+}
+.sidebar-link:hover {
+  color: #c0caf5;
+  background-color: rgba(47, 49, 70, 0.3);
+}
+.sidebar-link.active {
+  color: #7aa2f7;
+  background-color: rgba(122, 162, 247, 0.1);
+}
+
+/* Prose overrides for dark theme */
+.prose {
+  color: #c0caf5;
+}
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #c0caf5;
+}
+.prose a {
+  color: #7aa2f7;
+  text-decoration: none;
+}
+.prose a:hover {
+  text-decoration: underline;
+}
+.prose strong {
+  color: #c0caf5;
+}
+.prose blockquote {
+  color: #565f89;
+  border-left-color: #2f3146;
+}
+.prose code {
+  color: #9ece6a;
+  background: #131420;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+.prose pre {
+  background: #131420;
+  border: 1px solid #2f3146;
+}
+.prose pre code {
+  color: #c0caf5;
+  background: transparent;
+  padding: 0;
+}
+.prose hr {
+  border-color: #2f3146;
+}
+.prose thead th {
+  color: #c0caf5;
+  border-bottom-color: #2f3146;
+}
+.prose tbody td {
+  border-bottom-color: #2f3146;
+}
+.prose table {
+  font-size: 0.875rem;
+}
+.prose img {
+  border-radius: 0.5rem;
+}

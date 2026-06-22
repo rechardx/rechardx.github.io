@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World — 我的第一篇博客 | 我的博客</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              bg: '#0f1117',
+              surface: '#1a1b26',
+              border: '#2f3146',
+              text: '#c0caf5',
+              muted: '#565f89',
+              accent: '#7aa2f7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-dark-bg text-dark-text min-h-screen">
+  <!-- Nav -->
+  <nav class="border-b border-dark-border bg-dark-surface/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-semibold text-dark-text hover:text-dark-accent transition-colors">🏠 我的博客</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/" class="text-dark-muted hover:text-dark-text transition-colors">首页</a>
+        <a href="/portfolio.html" class="text-dark-muted hover:text-dark-text transition-colors">作品集</a>
+        <a href="/about.html" class="text-dark-muted hover:text-dark-text transition-colors">关于我</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Two-column layout -->
+  <div class="max-w-7xl mx-auto px-6 py-8 flex gap-8">
+    <!-- Left Sidebar -->
+    <aside class="hidden lg:block w-64 shrink-0">
+      <div class="sticky top-20">
+        <h3 class="text-xs font-semibold text-dark-muted uppercase tracking-wider mb-3">文章目录</h3>
+        <nav class="space-y-1" id="sidebar">
+          <a href="/posts/2026-06-22-hello-world.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">Hello World — 我的第一篇博客</a>
+<a href="/posts/2026-06-21-tailwind-dark-theme.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">使用 Tailwind CSS 构建暗色主题</a>
+<a href="/posts/2026-06-20-static-blog-guide.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">搭建纯静态博客的完整指南</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Right Content -->
+    <article class="flex-1 min-w-0">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold">Hello World — 我的第一篇博客</h1>
+        <p class="text-dark-muted mt-2 text-sm">2026-06-22</p>
+      </header>
+      <div class="prose prose-dark max-w-none">
+        <h2>为什么要写博客？</h2>
+<p>写博客是沉淀知识最好的方式之一。把学到的东西用自己的话写下来，比看十遍教程都管用。</p>
+<h2>这个博客用了什么技术？</h2>
+<ul>
+<li><strong>纯静态 HTML</strong> — 没有 React、Vue，就是最朴素的 HTML</li>
+<li><strong>Tailwind CSS</strong> — 实用优先的 CSS 框架</li>
+<li><strong>Markdown</strong> — 文章用 Markdown 写，构建时转成 HTML</li>
+<li><strong>GitHub Pages</strong> — 免费托管，零运维</li>
+</ul>
+<h2>代码示例</h2>
+<pre><code class="language-javascript">// build.js 的核心逻辑
+const posts = parsePosts();
+generateIndex(posts, indexTemplate);
+generatePostPages(posts, postTemplate);
+</code></pre>
+<h2>下一步</h2>
+<p>接下来我会写更多技术文章，记录学习和项目中的心得。</p>
+<blockquote>
+<p>博客是最好的学习笔记。—— 某位大佬（可能）</p>
+</blockquote>
+
+      </div>
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-border py-6 text-center text-dark-muted text-xs">
+    Powered by GitHub Pages
+  </footer>
+
+  <script>
+    // Highlight current post in sidebar
+    const currentPath = window.location.pathname;
+    document.querySelectorAll("#sidebar a").forEach((a) => {
+      if (a.getAttribute("href") === currentPath) {
+        a.classList.add("bg-dark-accent/10", "text-dark-accent");
+      }
+    });
+  </script>
+</body>
+</html>

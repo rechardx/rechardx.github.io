@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页 | 我的博客</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              bg: '#0f1117',
+              surface: '#1a1b26',
+              border: '#2f3146',
+              text: '#c0caf5',
+              muted: '#565f89',
+              accent: '#7aa2f7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-dark-bg text-dark-text min-h-screen">
+  <!-- Nav -->
+  <nav class="border-b border-dark-border bg-dark-surface/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-semibold text-dark-text hover:text-dark-accent transition-colors">🏠 我的博客</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/" class="text-dark-accent">首页</a>
+        <a href="/portfolio.html" class="text-dark-muted hover:text-dark-text transition-colors">作品集</a>
+        <a href="/about.html" class="text-dark-muted hover:text-dark-text transition-colors">关于我</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="max-w-6xl mx-auto px-6 pt-16 pb-12">
+    <div class="flex items-center gap-5">
+      <div class="w-20 h-20 rounded-full bg-dark-border flex items-center justify-center text-3xl">
+        👤
+      </div>
+      <div>
+        <h1 class="text-2xl font-bold">我的博客</h1>
+        <p class="text-dark-muted mt-1">这个人很懒，一句话都没说</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Latest Posts -->
+  <main class="max-w-6xl mx-auto px-6 pb-20">
+    <h2 class="text-lg font-semibold mb-5 text-dark-text">最新文章</h2>
+    <div class="grid gap-4">
+      
+    <a href="/posts/2026-06-22-hello-world.html" class="block p-5 rounded-lg border border-dark-border bg-dark-surface hover:border-dark-accent transition-colors group">
+      <h3 class="text-lg font-semibold text-dark-text group-hover:text-dark-accent transition-colors">Hello World — 我的第一篇博客</h3>
+      <p class="text-sm text-dark-muted mt-1">2026-06-22</p>
+      <p class="text-dark-text/70 mt-2 text-sm leading-relaxed">这是我的第一篇博客文章，用来测试博客系统的搭建和 Markdown 渲染效果。</p>
+    </a>
+
+    <a href="/posts/2026-06-21-tailwind-dark-theme.html" class="block p-5 rounded-lg border border-dark-border bg-dark-surface hover:border-dark-accent transition-colors group">
+      <h3 class="text-lg font-semibold text-dark-text group-hover:text-dark-accent transition-colors">使用 Tailwind CSS 构建暗色主题</h3>
+      <p class="text-sm text-dark-muted mt-1">2026-06-21</p>
+      <p class="text-dark-text/70 mt-2 text-sm leading-relaxed">分享如何用 Tailwind CSS 快速搭建一个美观的暗色主题网站，包括颜色系统设计和 prose 排版。</p>
+    </a>
+
+    <a href="/posts/2026-06-20-static-blog-guide.html" class="block p-5 rounded-lg border border-dark-border bg-dark-surface hover:border-dark-accent transition-colors group">
+      <h3 class="text-lg font-semibold text-dark-text group-hover:text-dark-accent transition-colors">搭建纯静态博客的完整指南</h3>
+      <p class="text-sm text-dark-muted mt-1">2026-06-20</p>
+      <p class="text-dark-text/70 mt-2 text-sm leading-relaxed">从零开始搭建一个基于 Markdown 的纯静态博客系统，包含构建脚本、模板引擎和自动部署。</p>
+    </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-border py-6 text-center text-dark-muted text-xs">
+    Powered by GitHub Pages
+  </footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搭建纯静态博客的完整指南 | 我的博客</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              bg: '#0f1117',
+              surface: '#1a1b26',
+              border: '#2f3146',
+              text: '#c0caf5',
+              muted: '#565f89',
+              accent: '#7aa2f7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-dark-bg text-dark-text min-h-screen">
+  <!-- Nav -->
+  <nav class="border-b border-dark-border bg-dark-surface/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-semibold text-dark-text hover:text-dark-accent transition-colors">🏠 我的博客</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/" class="text-dark-muted hover:text-dark-text transition-colors">首页</a>
+        <a href="/portfolio.html" class="text-dark-muted hover:text-dark-text transition-colors">作品集</a>
+        <a href="/about.html" class="text-dark-muted hover:text-dark-text transition-colors">关于我</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Two-column layout -->
+  <div class="max-w-7xl mx-auto px-6 py-8 flex gap-8">
+    <!-- Left Sidebar -->
+    <aside class="hidden lg:block w-64 shrink-0">
+      <div class="sticky top-20">
+        <h3 class="text-xs font-semibold text-dark-muted uppercase tracking-wider mb-3">文章目录</h3>
+        <nav class="space-y-1" id="sidebar">
+          <a href="/posts/2026-06-22-hello-world.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">Hello World — 我的第一篇博客</a>
+<a href="/posts/2026-06-21-tailwind-dark-theme.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">使用 Tailwind CSS 构建暗色主题</a>
+<a href="/posts/2026-06-20-static-blog-guide.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">搭建纯静态博客的完整指南</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Right Content -->
+    <article class="flex-1 min-w-0">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold">搭建纯静态博客的完整指南</h1>
+        <p class="text-dark-muted mt-2 text-sm">2026-06-20</p>
+      </header>
+      <div class="prose prose-dark max-w-none">
+        <h2>为什么不用 Hexo / Hugo？</h2>
+<p>这些工具很好，但有时候你只需要一个简单的博客，不想学习复杂的配置和主题系统。</p>
+<p>自己搭一个的好处：</p>
+<ol>
+<li><strong>完全可控</strong> — 每一行代码你都清楚</li>
+<li><strong>零依赖</strong> — 不需要庞大的框架</li>
+<li><strong>学习价值</strong> — 理解静态站点生成器的原理</li>
+</ol>
+<h2>架构设计</h2>
+<pre><code>blog/
+├── _posts/           # Markdown 文章
+├── _templates/       # HTML 模板
+├── assets/           # CSS、图片
+├── build.js          # 构建脚本
+└── dist/             # 输出目录（部署这个）
+</code></pre>
+<h2>构建流程</h2>
+<ol>
+<li>扫描 <code>_posts/</code> 目录下的 <code>.md</code> 文件</li>
+<li>解析 front matter（标题、日期、摘要）</li>
+<li>将 Markdown 转为 HTML</li>
+<li>插入到模板中</li>
+<li>输出到 <code>dist/</code></li>
+</ol>
+<h2>部署到 GitHub Pages</h2>
+<pre><code class="language-bash"># 构建
+npm run build
+
+# 推送 dist 目录到 gh-pages 分支
+cd dist
+git init
+git add .
+git commit -m &quot;deploy&quot;
+git push -f origin main:gh-pages
+</code></pre>
+<p>就这么简单！🎉</p>
+
+      </div>
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-border py-6 text-center text-dark-muted text-xs">
+    Powered by GitHub Pages
+  </footer>
+
+  <script>
+    // Highlight current post in sidebar
+    const currentPath = window.location.pathname;
+    document.querySelectorAll("#sidebar a").forEach((a) => {
+      if (a.getAttribute("href") === currentPath) {
+        a.classList.add("bg-dark-accent/10", "text-dark-accent");
+      }
+    });
+  </script>
+</body>
+</html>

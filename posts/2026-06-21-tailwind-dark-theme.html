@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用 Tailwind CSS 构建暗色主题 | 我的博客</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              bg: '#0f1117',
+              surface: '#1a1b26',
+              border: '#2f3146',
+              text: '#c0caf5',
+              muted: '#565f89',
+              accent: '#7aa2f7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-dark-bg text-dark-text min-h-screen">
+  <!-- Nav -->
+  <nav class="border-b border-dark-border bg-dark-surface/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-semibold text-dark-text hover:text-dark-accent transition-colors">🏠 我的博客</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/" class="text-dark-muted hover:text-dark-text transition-colors">首页</a>
+        <a href="/portfolio.html" class="text-dark-muted hover:text-dark-text transition-colors">作品集</a>
+        <a href="/about.html" class="text-dark-muted hover:text-dark-text transition-colors">关于我</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Two-column layout -->
+  <div class="max-w-7xl mx-auto px-6 py-8 flex gap-8">
+    <!-- Left Sidebar -->
+    <aside class="hidden lg:block w-64 shrink-0">
+      <div class="sticky top-20">
+        <h3 class="text-xs font-semibold text-dark-muted uppercase tracking-wider mb-3">文章目录</h3>
+        <nav class="space-y-1" id="sidebar">
+          <a href="/posts/2026-06-22-hello-world.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">Hello World — 我的第一篇博客</a>
+<a href="/posts/2026-06-21-tailwind-dark-theme.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">使用 Tailwind CSS 构建暗色主题</a>
+<a href="/posts/2026-06-20-static-blog-guide.html" class="sidebar-link block px-3 py-2 rounded-md text-sm transition-colors ">搭建纯静态博客的完整指南</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Right Content -->
+    <article class="flex-1 min-w-0">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold">使用 Tailwind CSS 构建暗色主题</h1>
+        <p class="text-dark-muted mt-2 text-sm">2026-06-21</p>
+      </header>
+      <div class="prose prose-dark max-w-none">
+        <h2>为什么选择暗色主题？</h2>
+<p>暗色主题不仅护眼，还能让界面看起来更有质感。Tailwind CSS 提供了完善的暗色模式支持。</p>
+<h2>颜色系统设计</h2>
+<p>一个好的暗色主题需要一套协调的颜色系统：</p>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>色值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>背景</td>
+<td><code>#0f1117</code></td>
+<td>主背景色</td>
+</tr>
+<tr>
+<td>表面</td>
+<td><code>#1a1b26</code></td>
+<td>卡片、侧边栏</td>
+</tr>
+<tr>
+<td>边框</td>
+<td><code>#2f3146</code></td>
+<td>分隔线、边框</td>
+</tr>
+<tr>
+<td>文字</td>
+<td><code>#c0caf5</code></td>
+<td>主要文字</td>
+</tr>
+<tr>
+<td>次要</td>
+<td><code>#565f89</code></td>
+<td>辅助信息</td>
+</tr>
+<tr>
+<td>强调</td>
+<td><code>#7aa2f7</code></td>
+<td>链接、高亮</td>
+</tr>
+</tbody></table>
+<h2>实际应用</h2>
+<pre><code class="language-css">/* tailwind.config.js */
+colors: {
+  dark: {
+    bg: &quot;#0f1117&quot;,
+    surface: &quot;#1a1b26&quot;,
+    border: &quot;#2f3146&quot;,
+    text: &quot;#c0caf5&quot;,
+    muted: &quot;#565f89&quot;,
+    accent: &quot;#7aa2f7&quot;,
+  }
+}
+</code></pre>
+<p>这套颜色系统灵感来自 <strong>Tokyo Night</strong> 主题，非常适合代码和技术类网站。</p>
+
+      </div>
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-border py-6 text-center text-dark-muted text-xs">
+    Powered by GitHub Pages
+  </footer>
+
+  <script>
+    // Highlight current post in sidebar
+    const currentPath = window.location.pathname;
+    document.querySelectorAll("#sidebar a").forEach((a) => {
+      if (a.getAttribute("href") === currentPath) {
+        a.classList.add("bg-dark-accent/10", "text-dark-accent");
+      }
+    });
+  </script>
+</body>
+</html>

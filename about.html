@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我 | 我的博客</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              bg: '#0f1117',
+              surface: '#1a1b26',
+              border: '#2f3146',
+              text: '#c0caf5',
+              muted: '#565f89',
+              accent: '#7aa2f7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-dark-bg text-dark-text min-h-screen">
+  <!-- Nav -->
+  <nav class="border-b border-dark-border bg-dark-surface/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-semibold text-dark-text hover:text-dark-accent transition-colors">🏠 我的博客</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/" class="text-dark-muted hover:text-dark-text transition-colors">首页</a>
+        <a href="/portfolio.html" class="text-dark-muted hover:text-dark-text transition-colors">作品集</a>
+        <a href="/about.html" class="text-dark-accent">关于我</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-8">关于我</h1>
+
+    <div class="space-y-6 text-dark-text/80 leading-relaxed">
+      <section>
+        <h2 class="text-xl font-semibold text-dark-text mb-3">👋 你好</h2>
+        <p>这里是自我介绍。可以写你的技术背景、兴趣方向、目前在做什么等。</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-dark-text mb-3">🛠️ 技术栈</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-sm px-3 py-1 rounded-full bg-dark-surface border border-dark-border">JavaScript</span>
+          <span class="text-sm px-3 py-1 rounded-full bg-dark-surface border border-dark-border">TypeScript</span>
+          <span class="text-sm px-3 py-1 rounded-full bg-dark-surface border border-dark-border">Python</span>
+          <span class="text-sm px-3 py-1 rounded-full bg-dark-surface border border-dark-border">HTML/CSS</span>
+          <span class="text-sm px-3 py-1 rounded-full bg-dark-surface border border-dark-border">React</span>
+          <span class="text-sm px-3 py-1 rounded-full bg-dark-surface border border-dark-border">Node.js</span>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-dark-text mb-3">📬 联系方式</h2>
+        <ul class="space-y-2">
+          <li>GitHub: <a href="#" class="text-dark-accent hover:underline">your-github</a></li>
+          <li>Email: <span class="text-dark-muted">your@email.com</span></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-dark-border py-6 text-center text-dark-muted text-xs">
+    Powered by GitHub Pages
+  </footer>
+</body>
+</html>
